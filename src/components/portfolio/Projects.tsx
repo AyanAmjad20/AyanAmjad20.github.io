@@ -2,33 +2,31 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
 import projectEcommerce from "@/assets/project-ecommerce.jpg";
-import projectTaskApp from "@/assets/project-taskapp.jpg";
-import projectAnalytics from "@/assets/project-analytics.jpg";
+import projectTaskApp from "@/assets/neurolinklogo.png";
+import projectAnalytics from "@/assets/medium.png";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "A modern e-commerce solution with real-time inventory management, advanced analytics, and seamless payment integration.",
+    title: "SpendWise - Full-Stack Receipt & Expense Tracker",
+    description: "A modern expense tracking solution with AI-powered receipt scanning, secure AWS-based authentication, and intuitive budget dashboards.",
     image: projectEcommerce,
-    tags: ["React", "Node.js", "MongoDB", "Stripe"],
+    tags: ["React", "Spring Boot", "SQL", "AWS", "Docker", "HTML", "CSS", "JavaScript"],
     github: "https://github.com",
     live: "https://example.com",
   },
   {
-    title: "Task Management App",
-    description: "Intuitive task management application with team collaboration features, calendar integration, and progress tracking.",
+    title: "Neurolink",
+    description: "All in one platform for Alzheimers screening, and care-giver dashboard",
     image: projectTaskApp,
-    tags: ["TypeScript", "React Native", "Firebase", "Redux"],
-    github: "https://github.com",
-    live: "https://example.com",
+    tags: ["HTML", "CSS", "JavaScript", "NodeJS", "ExpressJS", "MongoDB"],
+    github: "https://github.com/AyanAmjad20/neurolink",
   },
   {
-    title: "Analytics Dashboard",
-    description: "Enterprise-level analytics platform providing real-time insights, custom reporting, and data visualization tools.",
+    title: "Finshield",
+    description: "A real time AI detection platform to support endangered shark species conservation, using machine learning to flag active finning.",
     image: projectAnalytics,
-    tags: ["Vue.js", "Python", "PostgreSQL", "D3.js"],
-    github: "https://github.com",
-    live: "https://example.com",
+    tags: ["React", "HTML", "CSS", "JavaScript", "Python", "Computer Vision", "Machine Learning"],
+    github: "https://github.com/AyanAmjad20/finshield",
   },
 ];
 

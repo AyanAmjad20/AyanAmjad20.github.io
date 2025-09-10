@@ -29,7 +29,7 @@ const features = [
   {
     icon: Users,
     title: "Collaboration",
-    description: "Working effectively in agile team environments",
+    description: "Working effectively in team environments",
   },
 ];
 
@@ -43,15 +43,10 @@ export function About() {
               About Me
             </h2>
             <p className="text-lg text-muted-foreground mb-6">
-              I'm a passionate full-stack developer with 5+ years of experience building 
-              web applications that solve real-world problems. My journey in tech started 
-              with a curiosity about how things work on the internet, and has evolved into 
-              a career focused on creating impactful digital experiences.
+              
             </p>
             <p className="text-lg text-muted-foreground mb-8">
-              I specialize in modern JavaScript frameworks, cloud architecture, and 
-              user-centered design. When I'm not coding, you'll find me exploring new 
-              technologies, contributing to open-source projects, or mentoring aspiring developers.
+              I’m a full-stack developer with a strong foundation in React, TypeScript, and Node.js, experienced in building responsive UIs and scalable backends. I focus on clean, maintainable code and enjoy turning complex problems into intuitive solutions. Passionate about modern web technologies, I strive to deliver projects that balance performance, usability, and design.
             </p>
             
             <div className="grid grid-cols-2 gap-4">
@@ -68,28 +63,24 @@ export function About() {
           </div>
           
           <Card className="p-8 bg-gradient-light border-border/50 animate-fade-up" style={{ animationDelay: "200ms" }}>
-            <h3 className="text-2xl font-semibold mb-6">Technical Skills</h3>
-            <div className="space-y-6">
-              {skills.map((skill, index) => (
-                <div key={index}>
-                  <div className="flex justify-between mb-2">
-                    <span className="font-medium">{skill.name}</span>
-                    <span className="text-sm text-muted-foreground">{skill.level}%</span>
-                  </div>
-                  <div className="h-2 bg-secondary rounded-full overflow-hidden">
-                    <div 
-                      className="h-full bg-gradient-primary rounded-full transition-all duration-1000 ease-out"
-                      style={{ 
-                        width: `${skill.level}%`,
-                        animation: `slide-in 1s ease-out ${index * 100}ms`,
-                        animationFillMode: "backwards",
-                      }}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </Card>
+  <h3 className="text-2xl font-semibold mb-6">Technical Skills</h3>
+  <div className="space-y-6 text-left">
+    <div>
+      <h4 className="text-lg font-medium mb-2">Programming Languages</h4>
+      <p className="text-muted-foreground">
+        HTML, CSS, JavaScript, Python, Java, SQL, MongoDB
+      </p>
+    </div>
+
+    <div>
+      <h4 className="text-lg font-medium mb-2">Technologies</h4>
+      <p className="text-muted-foreground">
+        React, NodeJS, ExpressJS, SpringBoot, OpenCV, YOLO, AWS, Docker, REST API, Git
+      </p>
+    </div>
+  </div>
+</Card>
+
         </div>
       </div>
     </section>

@@ -102,7 +102,7 @@ export function Contact() {
                 </div>
                 <div>
                   <h3 className="font-semibold mb-1">Email</h3>
-                  <p className="text-muted-foreground">john.doe@example.com</p>
+                  <p className="text-muted-foreground">ayanamjad20@gmail.com</p>
                 </div>
               </div>
             </Card>
@@ -114,7 +114,7 @@ export function Contact() {
                 </div>
                 <div>
                   <h3 className="font-semibold mb-1">Phone</h3>
-                  <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                  <p className="text-muted-foreground">+1 647 388 2418</p>
                 </div>
               </div>
             </Card>
@@ -126,7 +126,7 @@ export function Contact() {
                 </div>
                 <div>
                   <h3 className="font-semibold mb-1">Location</h3>
-                  <p className="text-muted-foreground">San Francisco, CA</p>
+                  <p className="text-muted-foreground">Toronto Ontario, Canada</p>
                 </div>
               </div>
             </Card>

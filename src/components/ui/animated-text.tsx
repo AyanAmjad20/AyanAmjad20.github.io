@@ -1,37 +1,64 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
 interface AnimatedTextProps {
   text: string;
   className?: string;
-  delay?: number;
+  delay?: number;   // ms before starting
+  speed?: number;   // ms per char
 }
 
-export function AnimatedText({ text, className, delay = 0 }: AnimatedTextProps) {
+export function AnimatedText({
+  text,
+  className,
+  delay = 0,
+  speed = 50,
+}: AnimatedTextProps) {
   const [displayText, setDisplayText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      if (currentIndex < text.length) {
-        const interval = setInterval(() => {
-          setDisplayText((prev) => prev + text[currentIndex]);
-          setCurrentIndex((prev) => prev + 1);
-        }, 50);
+  const intervalRef = useRef<number | null>(null);
+  const timeoutRef = useRef<number | null>(null);
 
-        return () => clearInterval(interval);
-      }
+  useEffect(() => {
+    // reset when text changes
+    setDisplayText("");
+    setCurrentIndex(0);
+
+    // start after delay
+    timeoutRef.current = window.setTimeout(() => {
+      intervalRef.current = window.setInterval(() => {
+        setCurrentIndex((i) => {
+          if (i >= text.length) {
+            if (intervalRef.current !== null) {
+              clearInterval(intervalRef.current);
+              intervalRef.current = null;
+            }
+            return i;
+          }
+          // update displayed text in lockstep
+          setDisplayText(text.slice(0, i + 1));
+          return i + 1;
+        });
+      }, speed);
     }, delay);
 
-    return () => clearTimeout(timeout);
-  }, [currentIndex, text, delay]);
+    return () => {
+      if (timeoutRef.current !== null) {
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
+      }
+      if (intervalRef.current !== null) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
+    };
+  }, [text, delay, speed]);
 
   return (
     <span className={cn("inline-block", className)}>
       {displayText}
-      {currentIndex < text.length && (
-        <span className="animate-pulse">|</span>
-      )}
+      {currentIndex < text.length && <span className="animate-pulse">|</span>}
     </span>
   );
 }
